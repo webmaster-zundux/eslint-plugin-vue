@@ -7,8 +7,30 @@
 const rules = require('../../tools/lib/rules')
 const categories = require('../../tools/lib/categories')
 
-const uncategorizedRules = rules.filter(rule => !rule.meta.docs.category && !rule.meta.deprecated)
+const uncategorizedRules = rules.filter(rule => !rule.meta.docs.categories && !rule.meta.deprecated)
 const deprecatedRules = rules.filter(rule => rule.meta.deprecated)
+
+const categorizedRules = []
+for (const category of categories) {
+  const { title, rules } = category
+
+  const children = rules
+    .filter(({ ruleId }) => categorizedRules
+      .every(({ children }) => {
+        return children.every(([, alreadyRuleId]) => alreadyRuleId !== ruleId)
+      }))
+    .map(({ ruleId, name }) => [`/rules/${name}`, ruleId])
+
+  if (children.length === 0) {
+    continue
+  }
+
+  categorizedRules.push({
+    title: title.text.replace(/ \(.+?\)/, ''),
+    collapsable: false,
+    children
+  })
+}
 
 const extraCategories = []
 if (uncategorizedRules.length > 0) {
@@ -59,11 +81,7 @@ module.exports = {
         '/rules/',
 
         // Rules in each category.
-        ...categories.map(({ title, rules }) => ({
-          title: title.replace(/ \(.+?\)/, ''),
-          collapsable: false,
-          children: rules.map(({ ruleId, name }) => [`/rules/${name}`, ruleId])
-        })),
+        ...categorizedRules,
 
         // Rules in no category.
         ...extraCategories
