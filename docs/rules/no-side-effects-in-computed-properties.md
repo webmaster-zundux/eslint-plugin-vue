@@ -7,7 +7,7 @@ description: disallow side effects in computed properties
 # vue/no-side-effects-in-computed-properties
 > disallow side effects in computed properties
 
-- :gear: This rule is included in all of `"plugin:vue/essential"`, `"plugin:vue/strongly-recommended"` and `"plugin:vue/recommended"`.
+- :gear: This rule is included in all of `"plugin:vue/vue3-essential"`, `"plugin:vue/essential"`, `"plugin:vue/vue3-strongly-recommended"`, `"plugin:vue/strongly-recommended"`, `"plugin:vue/vue3-recommended"` and `"plugin:vue/recommended"`.
 
 ## :book: Rule Details
 
@@ -60,9 +60,9 @@ export default {
 
 Nothing.
 
-## :books: Further reading
+## :books: Further Reading
 
-- [Guide - Computed Caching vs Methods](https://vuejs.org/v2/guide/computed.html#Computed-Caching-vs-Methods)
+- [Guide - Computed Caching vs Methods](https://v3.vuejs.org/guide/computed.html#computed-caching-vs-methods)
 
 ## :mag: Implementation
 

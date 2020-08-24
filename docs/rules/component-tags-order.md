@@ -7,6 +7,8 @@ description: enforce order of component top-level elements
 # vue/component-tags-order
 > enforce order of component top-level elements
 
+- :gear: This rule is included in `"plugin:vue/vue3-recommended"` and `"plugin:vue/recommended"`.
+
 ## :book: Rule Details
 
 This rule warns about the order of the `<script>`, `<template>` & `<style>` tags.
@@ -16,14 +18,14 @@ This rule warns about the order of the `<script>`, `<template>` & `<style>` tags
 ```json
 {
   "vue/component-tags-order": ["error", {
-    "order": ["script", "template", "style"]
+    "order": [ [ "script", "template" ], "style" ]
   }]
 }
 ```
 
-- `order` (`string[]`) ... The order of top-level element names. default `["script", "template", "style"]`.
+- `order` (`(string|string[])[]`) ... The order of top-level element names. default `[ [ "script", "template" ], "style" ]`.
 
-### `{ "order": ["script", "template", "style"] }` (default)
+### `{ "order": [ [ "script", "template" ], "style" ] }` (default)
 
 <eslint-code-block :rules="{'vue/component-tags-order': ['error']}">
 
@@ -31,6 +33,17 @@ This rule warns about the order of the `<script>`, `<template>` & `<style>` tags
 <!-- ✓ GOOD -->
 <script>/* ... */</script>
 <template>...</template>
+<style>/* ... */</style>
+```
+
+</eslint-code-block>
+
+<eslint-code-block :rules="{'vue/component-tags-order': ['error']}">
+
+```vue
+<!-- ✓ GOOD -->
+<template>...</template>
+<script>/* ... */</script>
 <style>/* ... */</style>
 ```
 
@@ -55,6 +68,17 @@ This rule warns about the order of the `<script>`, `<template>` & `<style>` tags
 <!-- ✓ GOOD -->
 <template>...</template>
 <script>/* ... */</script>
+<style>/* ... */</style>
+```
+
+</eslint-code-block>
+
+<eslint-code-block :rules="{'vue/component-tags-order': ['error', { 'order': ['template', 'script', 'style'] }]}">
+
+```vue
+<!-- ✗ BAD -->
+<script>/* ... */</script>
+<template>...</template>
 <style>/* ... */</style>
 ```
 
@@ -86,9 +110,9 @@ This rule warns about the order of the `<script>`, `<template>` & `<style>` tags
 
 </eslint-code-block>
 
-## :books: Further reading
+## :books: Further Reading
 
-- [Style guide - Single-file component top-level element order](https://vuejs.org/v2/style-guide/#Single-file-component-top-level-element-order-recommended)
+- [Style guide - Single-file component top-level element order](https://v3.vuejs.org/style-guide/#single-file-component-top-level-element-order-recommended)
 
 ## :mag: Implementation
 

@@ -7,7 +7,7 @@ description: enforce `v-on` directive style
 # vue/v-on-style
 > enforce `v-on` directive style
 
-- :gear: This rule is included in `"plugin:vue/strongly-recommended"` and `"plugin:vue/recommended"`.
+- :gear: This rule is included in all of `"plugin:vue/vue3-strongly-recommended"`, `"plugin:vue/strongly-recommended"`, `"plugin:vue/vue3-recommended"` and `"plugin:vue/recommended"`.
 - :wrench: The `--fix` option on the [command line](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems) can automatically fix some of the problems reported by this rule.
 
 ## :book: Rule Details
@@ -56,9 +56,9 @@ Default is set to `shorthand`.
 
 </eslint-code-block>
 
-## :books: Further reading
+## :books: Further Reading
 
-- [Style guide - Directive shorthands](https://vuejs.org/v2/style-guide/#Directive-shorthands-strongly-recommended)
+- [Style guide - Directive shorthands](https://v3.vuejs.org/style-guide/#directive-shorthands-strongly-recommended)
 
 ## :mag: Implementation
 

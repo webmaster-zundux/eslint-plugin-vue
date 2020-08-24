@@ -7,7 +7,7 @@ description: disallow parsing errors in `<template>`
 # vue/no-parsing-error
 > disallow parsing errors in `<template>`
 
-- :gear: This rule is included in all of `"plugin:vue/essential"`, `"plugin:vue/strongly-recommended"` and `"plugin:vue/recommended"`.
+- :gear: This rule is included in all of `"plugin:vue/vue3-essential"`, `"plugin:vue/essential"`, `"plugin:vue/vue3-strongly-recommended"`, `"plugin:vue/strongly-recommended"`, `"plugin:vue/vue3-recommended"` and `"plugin:vue/recommended"`.
 
 This rule reports syntax errors in `<template>`. For example:
 
@@ -96,7 +96,7 @@ The error codes which have `x-` prefix are original of this rule because errors 
 - `x-invalid-end-tag` enables the errors about the end tags of elements which have not opened.
 - `x-invalid-namespace` enables the errors about invalid `xmlns` attributes. See also [step 10. of "create an element for a token"](https://html.spec.whatwg.org/multipage/parsing.html#create-an-element-for-the-token).
 
-## :books: Further reading
+## :books: Further Reading
 
 - [WHATWG HTML spec](https://html.spec.whatwg.org/multipage/parsing.html#parse-errors)
 

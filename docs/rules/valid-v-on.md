@@ -7,7 +7,7 @@ description: enforce valid `v-on` directives
 # vue/valid-v-on
 > enforce valid `v-on` directives
 
-- :gear: This rule is included in all of `"plugin:vue/essential"`, `"plugin:vue/strongly-recommended"` and `"plugin:vue/recommended"`.
+- :gear: This rule is included in all of `"plugin:vue/vue3-essential"`, `"plugin:vue/essential"`, `"plugin:vue/vue3-strongly-recommended"`, `"plugin:vue/strongly-recommended"`, `"plugin:vue/vue3-recommended"` and `"plugin:vue/recommended"`.
 
 This rule checks whether every `v-on` directive is valid.
 
@@ -42,7 +42,7 @@ This rule reports `v-on` directives in the following cases:
 </eslint-code-block>
 
 ::: warning Note
-This rule does not check syntax errors in directives because it's checked by [no-parsing-error] rule.
+This rule does not check syntax errors in directives because it's checked by [vue/no-parsing-error] rule.
 :::
 
 ## :wrench: Options
@@ -72,11 +72,11 @@ This rule has an object option:
 
 </eslint-code-block>
 
-## :couple: Related rules
+## :couple: Related Rules
 
-- [no-parsing-error]
+- [vue/no-parsing-error]
 
-[no-parsing-error]: no-parsing-error.md
+[vue/no-parsing-error]: ./no-parsing-error.md
 
 ## :mag: Implementation
 

@@ -7,7 +7,7 @@ description: enforce valid `v-model` directives
 # vue/valid-v-model
 > enforce valid `v-model` directives
 
-- :gear: This rule is included in all of `"plugin:vue/essential"`, `"plugin:vue/strongly-recommended"` and `"plugin:vue/recommended"`.
+- :gear: This rule is included in all of `"plugin:vue/vue3-essential"`, `"plugin:vue/essential"`, `"plugin:vue/vue3-strongly-recommended"`, `"plugin:vue/strongly-recommended"`, `"plugin:vue/vue3-recommended"` and `"plugin:vue/recommended"`.
 
 This rule checks whether every `v-model` directive is valid.
 
@@ -15,10 +15,11 @@ This rule checks whether every `v-model` directive is valid.
 
 This rule reports `v-model` directives in the following cases:
 
-- The directive has that argument. E.g. `<input v-model:aaa="foo">`
-- The directive has the modifiers which are not supported. E.g. `<input v-model.bbb="foo">`
+- The directive used on HTMLElement has an argument. E.g. `<input v-model:aaa="foo">`
+- The directive used on HTMLElement has modifiers which are not supported. E.g. `<input v-model.bbb="foo">`
 - The directive does not have that attribute value. E.g. `<input v-model>`
-- The directive does not have the attribute value which is valid as LHS. E.g. `<input v-model="foo() + bar()">`
+- The directive does not have the attribute value which is valid as LHS. E.g. `<input v-model="foo() + bar()">`, `<input v-model="a?.b">`
+- The directive has potential null object property access. E.g. `<input v-model="(a?.b).c">`
 - The directive is on unsupported elements. E.g. `<div v-model="foo"></div>`
 - The directive is on `<input>` elements which their types are `file`. E.g. `<input type="file" v-model="foo">`
 - The directive's reference is iteration variables. E.g. `<div v-for="x in list"><input type="file" v-model="x"></div>`
@@ -32,6 +33,9 @@ This rule reports `v-model` directives in the following cases:
   <input v-model.lazy="foo">
   <textarea v-model="foo"/>
   <MyComponent v-model="foo"/>
+  <MyComponent v-model:propName="foo"/>
+  <MyComponent v-model.modifier="foo"/>
+  <MyComponent v-model:propName.modifier="foo"/>
   <div v-for="todo in todos">
     <input v-model="todo.name">
   </div>
@@ -41,6 +45,8 @@ This rule reports `v-model` directives in the following cases:
   <input v-model:aaa="foo">
   <input v-model.bbb="foo">
   <input v-model="foo + bar">
+  <input v-model="a?.b.c">
+  <input v-model="(a?.b).c">
   <div v-model="foo"/>
   <div v-for="todo in todos">
     <input v-model="todo">
@@ -51,18 +57,18 @@ This rule reports `v-model` directives in the following cases:
 </eslint-code-block>
 
 ::: warning Note
-This rule does not check syntax errors in directives because it's checked by [no-parsing-error] rule.
+This rule does not check syntax errors in directives because it's checked by [vue/no-parsing-error] rule.
 :::
 
 ## :wrench: Options
 
 Nothing.
 
-## :couple: Related rules
+## :couple: Related Rules
 
-- [no-parsing-error]
+- [vue/no-parsing-error]
 
-[no-parsing-error]: no-parsing-error.md
+[vue/no-parsing-error]: ./no-parsing-error.md
 
 ## :mag: Implementation
 

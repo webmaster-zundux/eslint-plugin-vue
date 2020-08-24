@@ -7,7 +7,7 @@ description: enforce usage of `exact` modifier on `v-on`
 # vue/use-v-on-exact
 > enforce usage of `exact` modifier on `v-on`
 
-- :gear: This rule is included in all of `"plugin:vue/essential"`, `"plugin:vue/strongly-recommended"` and `"plugin:vue/recommended"`.
+- :gear: This rule is included in all of `"plugin:vue/vue3-essential"`, `"plugin:vue/essential"`, `"plugin:vue/vue3-strongly-recommended"`, `"plugin:vue/strongly-recommended"`, `"plugin:vue/vue3-recommended"` and `"plugin:vue/recommended"`.
 
 ## :book: Rule Details
 
@@ -36,14 +36,14 @@ This rule enforce usage of `exact` modifier on `v-on` when there is another `v-o
 }
 ```
 
-## :couple: Related rules
+## :couple: Related Rules
 
 - [vue/v-on-style](./v-on-style.md)
 - [vue/valid-v-on](./valid-v-on.md)
 
-## :books: Further reading
+## :books: Further Reading
 
-- [Guide - .exact Modifier](https://vuejs.org/v2/guide/events.html#exact-Modifier)
+- [Guide - .exact Modifier](https://v3.vuejs.org/guide/events.html#exact-modifier)
 
 ## :mag: Implementation
 
