@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-vue",
-  "version": "7.0.0-beta.2",
+  "version": "7.0.0-beta.3",
   "description": "Official ESLint plugin for Vue.js",
   "main": "lib/index.js",
   "scripts": {
@@ -76,7 +76,7 @@
     "lodash": "^4.17.15",
     "mocha": "^7.1.2",
     "nyc": "^15.0.1",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.1",
     "typescript": "^3.9.5",
     "vue-eslint-editor": "^1.1.0",
     "vuepress": "^1.4.1"
